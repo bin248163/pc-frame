@@ -76,20 +76,17 @@ $(function() {
 	});
 	
 	//tab选项卡
-	var $tabList = $('#tablist1 ul li');
-	var $tab = $('#tab1');
-	$tabList.hover(function() {
+	$('.tabnav ul li').hover(function() {
 		$(this).addClass('this').siblings().removeClass('this');
-		var index = $tabList.index(this);
-		$tab.find('>div').eq(index).show().siblings().hide();
+		var index = $('.tabnav ul li').index(this);
+		$('.tabcon').find('.tab-con').eq(index).show().siblings().hide();
 	})
-	$tabList.click(function() {
-			$(this).addClass('this').siblings().removeClass('this');
-			var index = $tabList.index(this);
-			$tab.find('>div').eq(index).show().siblings().hide();
-			return false;
-	});
-	$tabList.eq(0).click();
+	$('.tabnav ul li').click(function() {
+		$(this).addClass('this').siblings().removeClass('this');
+		var index = $('.tabnav ul li').index(this);
+		$('.tabcon').find('.tab-con').eq(index).show().siblings().hide();
+	})
+	$('.tabnav ul li').eq(0).click();
 	//返回顶部
 	$('#top').click(function() {
 		$('body,html').animate({scrollTop: 0}, 300);

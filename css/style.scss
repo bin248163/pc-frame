@@ -3,10 +3,10 @@
 Author:  前小端 
 Author url: http://blog.qianxiaoduan.com/
 */
-@import "Globalstyle.scss";//插入外部文件：全局样式
+@import "reset.scss";//插入外部文件：全局样式
 $color:#0078d7;//定义全局主色
 $bj:#eee;//定义页面灰色背景
-$width:1000px;//定义网站宽度
+$width:1200px;//定义网站宽度
 $banner:480px;//banner高度
 $left:200px;//首页左边栏宽度
 $n-left:200px;//内页左边栏宽度
@@ -43,31 +43,13 @@ transform: skewx(-25deg);-o-transform: skewx(-25deg);-moz-transform: skewx(-25de
 a{text-decoration:none;color:#444;
     &:hover{color: $color;}
 }
-.w-100{width: 100%;min-width: $width;
+.min-width{min-width: $width;}
+.w-100b{background: $bj;}
+.container{width: $width;margin: 0 auto;position: relative;
     &:after{content: "";display: block;clear: both;}
 }
-.w-100b{width: 100%;min-width: $width;background: $bj;
-    &:after{content: "";display: block;clear: both;}
-}
-.n-100{width: 100%;
-    &:after{content: "";display: block;clear: both;}
-}
-.w-1000{width: $width;margin: 0 auto;position: relative;
-    &:after{content: "";display: block;clear: both;}
-}
-//清除浮动
-.clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-}
-.clearfix {
-    *zoom: 1;
-}
-//内容宽度
+
+//内容宽度 
 .logo{float: left;padding: 10px 0;width: 200px;}
 .logo-r{float: left;padding-left: 50px;}
 .tel{float: right;}//页面顶部联系电话
@@ -110,7 +92,7 @@ a{text-decoration:none;color:#444;
 }
 .tab-right{width: $width - ($left + 15px);float: left;overflow: hidden;}
 .tab-rightn{width: ($width - ($left + 15px))* 10;overflow: hidden;}
-.tab-con{width: $width - ($left + 15px);float: left;font-size: 0;letter-spacing:-3px;}
+.tab-con{width: $width - ($left + 15px);float: left;}
  
 //内页左侧导航
 .n-tab-left{width: $n-left;
@@ -126,7 +108,9 @@ a{text-decoration:none;color:#444;
 }
 
 //点击滚动
-.gd{width:100%;height:auto;overflow:hidden;position:relative;}
+.gd{width:100%;height:auto;overflow:hidden;position:relative;
+    img{width: 100%;}
+}
 .gd_prev{height: 70px; font-size: 40px;line-height: 70px;position: absolute;top: 50%;left: 0;z-index: 9;font-family: "宋体";background: $color;color: #fff;cursor: pointer;margin-top: -35px;}
 .gd_next{height: 70px; font-size: 40px;line-height: 70px;position: absolute;top: 50%;right: 0;z-index: 9;font-family: "宋体";background: $color;color: #fff;cursor: pointer;margin-top: -35px;}
 .gd_main{width:10000px;overflow:hidden;position:relative;z-index:1;
@@ -158,6 +142,7 @@ a{text-decoration:none;color:#444;
 
 //首页下方新闻资讯
 .news{width:($width - 30px)/3;float: left;
+    img{width: 100%;}
     ul{padding-top: 10px;
         li{width: 100%;overflow: hidden;font-size: 14px;line-height: 28px;height: 28px;
             i{width: 4px;float: left;height: 4px;background:#444444;border-radius: 4px;margin: 14px 6px 0 5px;}
@@ -184,8 +169,9 @@ a{text-decoration:none;color:#444;
         }
     }
 }
-.ewm{width: 130px;float: right;padding: 0 10px;
+.code{width: 130px;float: right;padding: 0 10px;
     p{text-align: center;color: #bbb;}
+    img{width: 100%;}
 }
 .bottom1{width: 100%;padding: 10px 0;overflow: hidden;background: #efeeed;min-width: $width;z-index: 9;position: relative;
     .bot-p1{width: 500px;float: left;}
